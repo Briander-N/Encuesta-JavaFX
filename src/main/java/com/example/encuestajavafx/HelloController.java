@@ -56,6 +56,11 @@ public class HelloController {
         String respuesta3 = txtQ3.getText().trim();
         String respuesta4 = cmbQ4.getValue();
 
+        if(respuesta1.isEmpty() || respuesta2 == null || respuesta3.isEmpty()|| respuesta4 == null){
+            lblResultados.setText("Campos vacios!!!");
+            return;
+        }
+
 
         int puntaje = 0;
 
