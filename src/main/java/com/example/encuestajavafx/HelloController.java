@@ -26,6 +26,10 @@ public class HelloController {
     private Label lblPuntaje;
     @FXML
     private Label lblResultados;
+    @FXML
+    private Label lblCorrectas;
+    @FXML
+    private Label lblIncorrectas;
 
     //TextField
     @FXML
@@ -63,21 +67,39 @@ public class HelloController {
 
 
         int puntaje = 0;
+        int correctas = 0;
+        int incorrectas = 0;
 
         if(respuesta1.toLowerCase().equals("jumpman")){
             puntaje += 5;
+            correctas += 1;
+        }else {
+            incorrectas += 1;
         }
         if (respuesta2.equals("Virtual Boy")){
             puntaje += 5;
+            correctas += 1;
+        }else {
+            incorrectas += 1;
         }
         if (respuesta3.toLowerCase().equals("kazuya")){
             puntaje += 5;
+            correctas += 1;
+        }else {
+            incorrectas += 1;
         }
         if (respuesta4.equals("Nintendo DS")){
             puntaje += 5;
+            correctas += 1;
+        }else {
+            incorrectas += 1;
         }
 
         lblResultados.setText(String.valueOf(puntaje) + "!");
+
+        lblCorrectas.setText("Respuestas correctas: " + String.valueOf(correctas));
+
+        lblIncorrectas.setText("Respuestas incorrectas: " + String.valueOf(incorrectas));
 
     }
 
